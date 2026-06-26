@@ -134,10 +134,10 @@ class ECCDashboard(tk.Tk):
                  bg=ACCENT, fg="white").place(relx=.5, rely=.5, anchor="center")
 
         tk.Label(hdr,
-                 text="NCHL-ECC  |  ECC Batch Generator — Cheque Exchange Dashboard",
+                 text="NCHL-ECC  |  ECC Batch Generator —  Dashboard",
                  font=("Segoe UI", 11, "bold"), bg=TB_BG, fg=T_LITE
                  ).place(x=52, y=8)
-        tk.Label(hdr, text="Rastriya Banijya Bank Ltd.",
+        tk.Label(hdr, text=" ",
                  font=("Segoe UI", 8), bg=TB_BG, fg="#BBDEFB"
                  ).place(x=52, y=30)
 
@@ -300,11 +300,11 @@ class ECCDashboard(tk.Tk):
         X0    = 72   # start x (just after "Generate:" label)
         GAP   = 5
 
-        self._btn(act, "Accepted Report (.xls)", BTN_ACCEPT,
+        self._btn(act, "Accepted Batch (.xls)", BTN_ACCEPT,
                   self._generate_accepted,   x=X0,                    y=BTN_Y, w=BTN_W, h=BTN_H)
-        self._btn(act, "Express Report (.xls)",  BTN_EXPRESS,
+        self._btn(act, "Express Batch (.xls)",  BTN_EXPRESS,
                   self._generate_express,    x=X0 + (BTN_W+GAP),     y=BTN_Y, w=BTN_W, h=BTN_H)
-        self._btn(act, "Calculate Commission",   BTN_COMM,
+        self._btn(act, "Commission Batch",   BTN_COMM,
                   self._generate_commission, x=X0 + 2*(BTN_W+GAP),   y=BTN_Y, w=BTN_W, h=BTN_H)
         self._btn(act, "Full Batch (.xls)",      BTN_FULLBATCH,
                   self._generate_fullbatch,  x=X0 + 3*(BTN_W+GAP),   y=BTN_Y, w=BTN_W, h=BTN_H)
