@@ -614,7 +614,7 @@ class ECCDashboard(tk.Tk):
             pos_rows = []
             for row in self._get_data_rows(self.master_data):
                 urgency = str(row[40]).strip()
-                if urgency != "Regular": continue
+                if urgency == "Express": continue
                 raw_amt = self._parse_amt(row[15])
                 if raw_amt < threshold: continue
                 bfd_acc  = self._gv(row, 25)
@@ -637,9 +637,9 @@ class ECCDashboard(tk.Tk):
             if total_records == 0:
                 self._set_status(
                     f"Commission Batch: no qualifying cheques found "
-                    f"(Regular + amount ≥ {threshold:,.0f})")
+                    f"(non-Express + amount ≥ {threshold:,.0f})")
                 messagebox.showinfo("No records",
-                    f"No Regular cheques found with amount ≥ Rs.{threshold:,.0f}.\n\n"
+                    f"No non-Express cheques found with amount ≥ Rs.{threshold:,.0f}.\n\n"
                     "No file was saved.")
                 return
             wb = xlwt.Workbook(encoding="utf-8")
